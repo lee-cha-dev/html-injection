@@ -17,11 +17,11 @@ function bodyOnLoad(){
     // }
 
     switch (dirArr[dirArr.length - 1]){
-        case "/":
+        case "":
             console.log("Home");
             content.innerHTML += About();
             break;
-        case "/portfolio":
+        case "portfolio":
             console.log("Portfolio");
             content.innerHTML += Portfolio();
             break;
