@@ -3,8 +3,6 @@
 // ADD A TAGS ANYTIME A NEW NAV BUTTON IS ADDED TO THE NAVBAR
 // ENSURE THAT BOTH DEVELOPMENT NAV AND DEPLOYMENT NAV ARE UPDATED
 
-
-const dev = false;
 let nav;
 if (dev === true){
     nav =
