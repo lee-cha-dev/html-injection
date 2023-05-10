@@ -6,7 +6,7 @@ const Navbar = () => {
         return (
             "<nav class='navbar'>" +
             "   <a href='index.html'>LC</a>" +
-            "   <a href='/portfolio'>Portfolio</a>" +
+            "   <a href='portfolio.html'>Portfolio</a>" +
             "</nav>"
         )
     }
