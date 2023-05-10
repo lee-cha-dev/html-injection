@@ -9,15 +9,8 @@ function bodyOnLoad(){
     let dirArr = dir.split('/');
     console.log(dirArr);
     // HANDLING PAGE TO LOAD
-    // if (dirArr[dirArr.length - 1] === "index.html"){
-    //     content.innerHTML += About();
-    // }
-    // if (dirArr[dirArr.length - 1] === "portfolio.html"){
-    //     content.innerHTML += Portfolio();
-    // }
-
     switch (dirArr[dirArr.length - 1]){
-        case "":
+        case "html-injection":
             console.log("Home");
             content.innerHTML += About();
             break;
@@ -26,7 +19,6 @@ function bodyOnLoad(){
             content.innerHTML += Portfolio();
             break;
     }
-
 }
 
 function loadPage(pageName){
