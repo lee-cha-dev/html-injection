@@ -19,5 +19,5 @@ if (dev === true){
 }
 
 const Navbar = () => {
-    return (nav);
+    return nav;
 }
