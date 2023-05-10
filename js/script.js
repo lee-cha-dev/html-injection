@@ -9,7 +9,7 @@ function bodyOnLoad(){
     let dirArr = dir.split('/');
     console.log(dirArr);
     // HANDLING PAGE TO LOAD
-    // if (dirArr[dirArr.length - 1] === "home.html"){
+    // if (dirArr[dirArr.length - 1] === "index.html"){
     //     content.innerHTML += About();
     // }
     // if (dirArr[dirArr.length - 1] === "portfolio.html"){
