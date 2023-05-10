@@ -10,11 +10,11 @@ function bodyOnLoad(){
     console.log(dirArr);
     // HANDLING PAGE TO LOAD
     switch (dirArr[dirArr.length - 1]){
-        case "portfolio":
+        case "portfolio":           // LOAD PORTFOLIO CONTENT
             console.log("Portfolio");
             content.innerHTML += Portfolio();
             break;
-        default:
+        default:                    // LOAD LANDING PAGE
             console.log("Home Page");
             content.innerHTML += About();
     }

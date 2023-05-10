@@ -1,5 +1,7 @@
 
+
 const Navbar = () => {
+    const dev = false;
     if (dev === true){
         return (
             "<nav class='navbar'>" +
