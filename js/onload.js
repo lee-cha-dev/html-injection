@@ -1,6 +1,10 @@
 // import { Box } from "@chakra-ui";
 // import { About } from "pages/About";
 
+// TOGGLE DEVELOPMENT AND DEPLOYMENT NAVIGATION
+const dev = false;
+
+// ONLOAD FOR ALL BODY TAGS IN EVERY PAGE
 function bodyOnLoad(){
     // GET BODY ELEMENT
     const content = document.getElementById('body-content');
@@ -16,6 +20,9 @@ function bodyOnLoad(){
     }
 }
 
+// UPDATE THE NAVIGATION IN BOTH COLUMN AS NEW PAGES ARE ADD -- MIGHT MAKE THIS MORE EFFICIENT
+// ADD ANOTHER CASE WITH THE RELEVANT NAME OR FILE NAME
+// BE SURE TO UPDATE THE NAV BAR AS WELL
 function devNav(dirArr, content){
     // HANDLING PAGE TO LOAD
     switch (dirArr[dirArr.length - 1]){
