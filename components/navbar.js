@@ -1,5 +1,5 @@
 
-const dev = false;
+const dev = true;
 let nav;
 if (dev === true){
     nav =
