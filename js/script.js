@@ -10,14 +10,13 @@ function bodyOnLoad(){
     console.log(dirArr);
     // HANDLING PAGE TO LOAD
     switch (dirArr[dirArr.length - 1]){
-        case "html-injection":
-            console.log("Home");
-            content.innerHTML += About();
-            break;
         case "portfolio":
             console.log("Portfolio");
             content.innerHTML += Portfolio();
             break;
+        default:
+            console.log("Home Page");
+            content.innerHTML += About();
     }
 }
 
