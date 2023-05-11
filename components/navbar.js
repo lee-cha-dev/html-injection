@@ -14,9 +14,11 @@ if (dev === true){
         "</nav>";
 } else {
     nav =
-        "<nav class='navbar'>" +
-        "   <a href='./'>LC</a>" +
-        "   <a href='/html-injection/portfolio'>Portfolio</a>" +
+        "<nav id='navbar' class='navbar'>" +
+        "   <a href='index.html'><h3>LC</h3></a>" +
+        "   <a href='portfolio.html'><p>Portfolio</p></a>" +
+        "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
+        "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
         "</nav>";
 }
 
