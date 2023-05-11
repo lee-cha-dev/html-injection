@@ -1,0 +1,28 @@
+
+const createThemeCookies = () => {
+
+}
+
+const getThemeCookies = () => {
+
+}
+
+const deleteThemeCookies = () => {
+
+}
+
+// CALL WHEN USER TOGGLES TO DARK MODE
+const updateThemeCookiesToDark = () => {
+
+}
+
+// CALL WHEN USER TOGGLES TO LIGHT MODE
+const updateThemeCookiesToLight = () => {
+
+}
+
+// A COOKIE WILL/SHOULD BE MADE WHEN USER FIRST VISITS SITE. THE COOKIE WILL DETERMINE THE
+// DEFAULT COLOR SETTING AND TOGGLE TO LIGHT/DARK BASED ON THOSE SETTINGS. A COOKIE WILL BE
+// GENERATED WHEN THIS OCCURS.
+// -- THIS SHOULD ONLY HAPPEN WHEN THE USER VISITS FOR THE FIRST TIME OR DOES NOT HAVE
+// -- SITE COOKIES FOR THE THEME

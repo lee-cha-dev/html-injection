@@ -34,6 +34,8 @@ function devNav(dirArr, content){
             console.log("Home Page");
             content.innerHTML += About();
     }
+    // SET CURRENT THEME
+    handleTheme();
 }
 
 function deployedNav(dirArr, content){
@@ -47,4 +49,58 @@ function deployedNav(dirArr, content){
             console.log("Home Page");
             content.innerHTML += About();
     }
+    // SET CURRENT THEME
+    handleTheme();
+}
+
+function handleTheme(){
+    // CHECK FOR COOKIE THAT WILL DETERMINE LAST USED THEME
+
+    // IF NO COOKIE CHECK FOR SYSTEM SETTINGS -- IF POSSIBLE
+    setDarkTheme();
+}
+
+function setDarkTheme(){
+    // SET BODY THEME
+    const body = document.getElementById("body");
+    body.classList.remove("body-light-theme");
+    body.classList.add("body-dark-theme");
+
+    // SET NAVBAR THEME
+    const navbar = document.getElementById('navbar');
+    navbar.classList.remove('navbar-light-theme');
+    navbar.classList.add('navbar-dark-theme');
+
+    // SET LIGHT ICON TOGGLE DISPLAY TO FLEX
+    document.getElementById('light-icon').style.display = 'flex';
+
+    // SET DARK ICON TOGGLE DISPLAY TO NONE;
+    document.getElementById('dark-icon').style.display = 'none';
+
+    // SWAP ICONS
+    document.getElementById('light-icon').style.display = 'flex';
+    document.getElementById('dark-icon').style.display = 'none';
+    console.log("dark-theme");
+}
+
+function setLightTheme(){
+    // SET BODY THEME
+    const body = document.getElementById("body");
+    body.classList.remove("body-dark-theme");
+    body.classList.add("body-light-theme");
+
+    // SET NAVBAR THEME
+    const navbar = document.getElementById('navbar');
+    navbar.classList.remove('navbar-dark-theme');
+    navbar.classList.add('navbar-light-theme');
+
+    // SET LIGHT ICON TOGGLE DISPLAY TO NONE
+    document.getElementById('light-icon').style.display = 'none';
+
+    // SET DARK ICON TOGGLE DISPLAY TO FLEX;
+    document.getElementById('dark-icon').style.display = 'flex';
+
+    // SWAP ICONS
+    document.getElementById('light-icon').style.display = 'none';
+    document.getElementById('dark-icon').style.display = 'flex';
 }
