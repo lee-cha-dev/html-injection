@@ -15,8 +15,8 @@ if (dev === true){
 } else {
     nav =
         "<nav id='navbar' class='navbar'>" +
-        "   <a href='index.html'><h3>LC</h3></a>" +
-        "   <a href='portfolio.html'><p>Portfolio</p></a>" +
+        "   <a href='index'><h3>LC</h3></a>" +
+        "   <a href='portfolio'><p>Portfolio</p></a>" +
         "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
         "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
         "</nav>";
