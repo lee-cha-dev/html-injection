@@ -2,10 +2,11 @@
 // import { About } from "pages/About";
 
 // TOGGLE DEVELOPMENT AND DEPLOYMENT NAVIGATION
-const dev = false;
+const dev = true;
 
 // ONLOAD FOR ALL BODY TAGS IN EVERY PAGE
 function bodyOnLoad(){
+
     // GET BODY ELEMENT
     const content = document.getElementById('body-content');
     console.log(window.location.href);
@@ -26,11 +27,11 @@ function bodyOnLoad(){
 function devNav(dirArr, content){
     // HANDLING PAGE TO LOAD
     switch (dirArr[dirArr.length - 1]){
-        case "portfolio.html":           // LOAD PORTFOLIO CONTENT
+        case "portfolio.html":          // LOAD PORTFOLIO CONTENT
             console.log("Portfolio");
             content.innerHTML += Portfolio();
             break;
-        default:                    // LOAD LANDING PAGE
+        default:                        // LOAD LANDING PAGE
             console.log("Home Page");
             content.innerHTML += About();
     }
@@ -60,6 +61,8 @@ function handleTheme(){
     setDarkTheme();
 }
 
+// TOGGLE THEME FUNCTIONS -- FOR SETTING THE THEM IN HANDLE THEME
+// AND ON CLICK FUNCTIONS FOR THE THEME TOGGLE IN THE NAVBAR --GLOBALLY ACCESSED
 function setDarkTheme(){
     // SET BODY THEME
     const body = document.getElementById("body");
