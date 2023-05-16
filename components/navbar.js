@@ -6,28 +6,33 @@
 
 const Navbar = () => {
     // NAV ELEMENT TO HOLD THE NAVBAR'S HTML
-    let nav;
+    let navPaths;
 
     // IF THE WEBSITE IS IN DEVELOPMENT MODE, THEN SET THE PAGES TO THEIR HTML PAGE
     // ELSE USE THE DEPLOYED LINKS
+    // ----PATHS SHOULD BE LISTED FIRST TO LAST AS THEY APPEAR LEFT TO RIGHT IN THE NAV
+    //     HTML BELOW.
     if (dev === true){
-        nav =
-            "<nav id='navbar' class='navbar'>" +
-            "   <a id='logo-link' href='index.html'><h3 id='logo-text'>LC</h3></a>" +
-            "   <a href='portfolio.html'><p>Portfolio</p></a>" +
-            "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
-            "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
-            "</nav>";
+        navPaths = [
+            'index.html',
+            'portfolio.html'
+        ];
     } else {
-        nav =
-            "<nav id='navbar' class='navbar'>" +
-            "   <a id='logo-link' href='./'><h3 id='logo-text'>LC</h3></a>" +
-            "   <a href='portfolio'><p>Portfolio</p></a>" +
-            "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
-            "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
-            "</nav>";
+        navPaths = [
+            './',
+            'portfolio'
+        ];
     }
 
+    // PASS NAVIGATION PATHS INTO HTML ELEMENT(S).
+    const nav =
+        "<nav id='navbar' class='navbar'>" +
+        `   <a id='logo-link' href=${navPaths[0]}><h3 id='logo-text'>LC</h3></a>` +
+        `   <a href=${navPaths[1]}><p>Portfolio</p></a>` +
+        "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
+        "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
+        "</nav>";
+
     // RETURN THE NAVBAR
-    return nav;
+    return (nav);
 }
