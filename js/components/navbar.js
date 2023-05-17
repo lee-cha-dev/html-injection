@@ -27,10 +27,10 @@ const Navbar = () => {
     // PASS NAVIGATION PATHS INTO HTML ELEMENT(S).
     const nav =
         "<nav id='navbar' class='navbar'>" +
-        `   <a id='logo-link' href=${navPaths[0]}><h3 id='logo-text'>LC</h3></a>` +
+        `   <a id='logo-link' href=${navPaths[0]}><h3 id='logo-text'>&lt; HI /&gt;</h3></a>` +
         `   <a href=${navPaths[1]}><p>Portfolio</p></a>` +
         "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
-        "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
+        "<span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
         "</nav>";
 
     // RETURN THE NAVBAR
