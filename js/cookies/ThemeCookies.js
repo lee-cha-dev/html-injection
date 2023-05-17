@@ -1,6 +1,6 @@
 
-const createThemeCookies = () => {
-    setThemeCookies("theme", "light", 90);
+const createThemeCookies = (themeType) => {
+    setThemeCookies("theme", themeType, 90);
 }
 
 const getThemeCookies = () => {
@@ -39,7 +39,7 @@ const updateThemeCookiesToLight = () => {
 
 const handleCookies = () => {
     const themeCookie = getThemeCookies();
-    if (themeCookie.length > 0){
+    if (themeCookie.length === 2){
         // COOKIE ALREADY EXISTS -- SET THEME
         switch (themeCookie[1]) {
             case "light":
@@ -51,7 +51,11 @@ const handleCookies = () => {
         }
     } else {
         // COOKIE DOES NOT EXIST -- CREATE COOKIE, THEN SET THEME
-        // createThemeCookies("light or dark");
+        const themeMatch = window.matchMedia("(prefers-color-scheme: dark)");
+        if (themeMatch.matches){
+            createThemeCookies("dark");
+            setDarkTheme();
+        } else { createThemeCookies("light"); setLightTheme(); }
     }
 }
 
