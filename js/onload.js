@@ -2,7 +2,7 @@
 // import { About } from "pages/About";
 
 // TOGGLE DEVELOPMENT AND DEPLOYMENT NAVIGATION
-const dev = false;
+const dev = true;
 
 // ONLOAD FOR ALL BODY TAGS IN EVERY PAGE
 function bodyOnLoad(){
@@ -21,8 +21,6 @@ function bodyOnLoad(){
     }
 
     // THEME COOKIES
-    // createThemeCookies();
-    console.log("Testing.");
     handleCookies();
 }
 
@@ -46,11 +44,9 @@ function deployedNav(dirArr, content){
     // HANDLING PAGE TO LOAD
     switch (dirArr[dirArr.length - 1]){
         case "portfolio":           // LOAD PORTFOLIO CONTENT
-            console.log("Portfolio");
             content.innerHTML += Portfolio();
             break;
         default:                    // LOAD LANDING PAGE
-            console.log("Home Page");
             content.innerHTML += About();
     }
 }

@@ -3,6 +3,10 @@ const createThemeCookies = (themeType) => {
     setThemeCookies("theme", themeType, 90);
 }
 
+// GET THE THEME COOKIES -- NOT SPECIFIC ABOUT COOKIE NAMES
+// THIS IS DUE TO THERE NOT BEING ANY OTHER COOKIES
+// WILL NEED TO ADD A FUNCTION/LOGIC TO BREAK THE COOKIE INTO A DICTIONARY/JS OBJECT
+// THEN GET THE COOKIE BASED ON THE DICTIONARY NAME -- TO DO ITEM --
 const getThemeCookies = () => {
     const decodedCookie = decodeURIComponent(document.cookie);
 
@@ -27,16 +31,6 @@ const deleteThemeCookies = () => {
     setThemeCookies("theme", null, null);
 }
 
-// CALL WHEN USER TOGGLES TO DARK MODE
-const updateThemeCookiesToDark = () => {
-
-}
-
-// CALL WHEN USER TOGGLES TO LIGHT MODE
-const updateThemeCookiesToLight = () => {
-
-}
-
 const handleCookies = () => {
     const themeCookie = getThemeCookies();
     if (themeCookie.length === 2){
@@ -52,10 +46,16 @@ const handleCookies = () => {
     } else {
         // COOKIE DOES NOT EXIST -- CREATE COOKIE, THEN SET THEME
         const themeMatch = window.matchMedia("(prefers-color-scheme: dark)");
+
+        // DARK THEME WILL BE SET AND COOKIE CREATED TO MATCH IF IT MATCHES
         if (themeMatch.matches){
             createThemeCookies("dark");
             setDarkTheme();
-        } else { createThemeCookies("light"); setLightTheme(); }
+            return;
+        }
+        // OTHERWISE THE USER'S PREFERENCE IS LIGHT MODE AND THE THEME WILL
+        // BE SET TO LIGHT, AS WELL AS THE COOKIE TO MATCH
+        createThemeCookies("light"); setLightTheme();
     }
 }
 
