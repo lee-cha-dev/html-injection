@@ -19,6 +19,11 @@ function bodyOnLoad(){
     } else {
         devNav(dirArr, content);
     }
+
+    // THEME COOKIES
+    // createThemeCookies();
+    console.log("Testing.");
+    handleCookies();
 }
 
 // UPDATE THE NAVIGATION IN BOTH COLUMN AS NEW PAGES ARE ADD -- MIGHT MAKE THIS MORE EFFICIENT
@@ -35,8 +40,6 @@ function devNav(dirArr, content){
             console.log("Home Page");
             content.innerHTML += About();
     }
-    // SET CURRENT THEME
-    handleTheme();
 }
 
 function deployedNav(dirArr, content){
@@ -50,8 +53,6 @@ function deployedNav(dirArr, content){
             console.log("Home Page");
             content.innerHTML += About();
     }
-    // SET CURRENT THEME
-    handleTheme();
 }
 
 function handleTheme(){
@@ -84,6 +85,9 @@ function setDarkTheme(){
     document.getElementById('light-icon').style.display = 'flex';
     document.getElementById('dark-icon').style.display = 'none';
     console.log("dark-theme");
+
+    // UPDATE COOKIES
+    setThemeCookies("theme", "dark", 90);
 }
 
 function setLightTheme(){
@@ -106,4 +110,7 @@ function setLightTheme(){
     // SWAP ICONS
     document.getElementById('light-icon').style.display = 'none';
     document.getElementById('dark-icon').style.display = 'flex';
+
+    // UPDATE COOKIES
+    setThemeCookies("theme", "light", 90);
 }

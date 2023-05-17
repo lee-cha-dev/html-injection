@@ -1,14 +1,30 @@
 
 const createThemeCookies = () => {
-
+    setThemeCookies("theme", "light", 90);
 }
 
 const getThemeCookies = () => {
+    const decodedCookie = decodeURIComponent(document.cookie);
 
+    const cookies = decodedCookie.split("; ");
+
+    return cookies[0].split("=");
+}
+
+const setThemeCookies = (name, value, daysToExpiration) => {
+    // GET AND SET DATE TO NUMBER OF DAYS (IN MILLISECONDS)
+    const date = new Date();
+    date.setTime(date.getTime() + daysToExpiration * 24 * 60 * 60 * 1000);
+
+    // CONVERT DATE TO A UTC STRING
+    const expires = date.toUTCString();
+
+    // ADD COOKIE
+    document.cookie = `${name}=${encodeURIComponent(value)};expires=${expires};SameSite=Lax;`;
 }
 
 const deleteThemeCookies = () => {
-
+    setThemeCookies("theme", null, null);
 }
 
 // CALL WHEN USER TOGGLES TO DARK MODE
@@ -19,6 +35,24 @@ const updateThemeCookiesToDark = () => {
 // CALL WHEN USER TOGGLES TO LIGHT MODE
 const updateThemeCookiesToLight = () => {
 
+}
+
+const handleCookies = () => {
+    const themeCookie = getThemeCookies();
+    if (themeCookie.length > 0){
+        // COOKIE ALREADY EXISTS -- SET THEME
+        switch (themeCookie[1]) {
+            case "light":
+                setLightTheme();
+                break;
+            case "dark":
+                setDarkTheme();
+                break;
+        }
+    } else {
+        // COOKIE DOES NOT EXIST -- CREATE COOKIE, THEN SET THEME
+        // createThemeCookies("light or dark");
+    }
 }
 
 // A COOKIE WILL/SHOULD BE MADE WHEN USER FIRST VISITS SITE. THE COOKIE WILL DETERMINE THE
