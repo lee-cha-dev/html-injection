@@ -1,5 +1,3 @@
-// import { Box } from "@chakra-ui";
-// import { About } from "pages/About";
 
 // TOGGLE DEVELOPMENT AND DEPLOYMENT NAVIGATION
 const dev = false;

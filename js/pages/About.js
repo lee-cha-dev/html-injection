@@ -1,7 +1,7 @@
 
 const aboutElements =
     "<div>" +
-    `   ${Navbar()}`+
+        Navbar() +
     "   <section class='heading'>" +
     "       <h1>Home Page</h1>" +
     "       <p>Welcome to the Landing Page!</p>" +

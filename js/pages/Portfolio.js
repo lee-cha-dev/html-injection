@@ -1,6 +1,6 @@
 const portfolioElements =
     "<div>" +
-    `   ${Navbar()}`+
+        Navbar() +
     "   <section class='heading'>" +
     "       <h1>Portfolio Page</h1>" +
     "       <p>Welcome to the Portfolio Page!</p>" +
